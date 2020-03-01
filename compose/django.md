@@ -69,6 +69,8 @@ and a `docker-compose.yml` file. (You can use either a `.yml` or `.yaml` extensi
     services:
       db:
         image: postgres
+        environment: 
+            POSTGRES_HOST_AUTH_METHOD: trust
       web:
         build: .
         command: python manage.py runserver 0.0.0.0:8000
